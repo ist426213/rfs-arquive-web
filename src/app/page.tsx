@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiUpload, FiDownload, FiEdit, FiSettings, FiLock, FiUsers, FiShield } from "react-icons/fi";
+import { FiUpload, FiDownload, FiEdit, FiSettings, FiLock, FiUsers, FiShield, FiImage } from "react-icons/fi";
 import { FaFilePdf, FaFileImage, FaFileWord, FaFileExcel, FaFileAlt } from "react-icons/fa";
 import React from "react";
 
@@ -64,91 +64,81 @@ export default function FileProApp() {
     <div className="min-h-screen bg-[#f9f9f9] text-gray-900">
       
       {/* Seção Hero */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#f9f9f9] to-[#002b7f]/5">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
-       
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#508f61]/30 to-[#002b7f]/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div> */}
-      </div>
+      {/* Hero Section with Balanced Three-Color Gradient */}
+      <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-r from-[#002b7f] via-[#c61828] to-[#508f61] text-white">
+        {/* Color overlay to blend the gradient smoothly */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/5"></div>
 
-  <div className="container mx-auto px-6 relative z-10">
-    <div className="max-w-5xl mx-auto text-center">
-      <div className="mb-8">
-        <span className="inline-block bg-[#002b7f]/10 text-[#002b7f] px-4 py-2 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
-          UTILIZADO POR EMPRESAS PORTUGUESAS
-        </span>
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight tracking-tight">
-          Processamento de Ficheiros Profissional <br className="hidden md:block" />
-          <span className="text-[#002b7f]">Sem Complexidade</span>
-        </h1>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          Ferramentas avançadas para conversão, OCR, compressão e edição de documentos - 
-          disponível em soluções cloud e desktop.
-        </p>
-      </div>
-
-      <div className="flex flex-col sm:flex-row justify-center gap-3 mb-20">
-        <button className="bg-[#002b7f] text-white px-6 py-3.5 rounded-lg font-medium hover:bg-blue-900 transition-all duration-300 flex items-center gap-2 justify-center shadow-md hover:shadow-lg backdrop-blur-sm">
-          <FiUpload size={18} />
-          Processar Online
-        </button>
-        <button className="bg-white text-[#002b7f] px-6 py-3.5 rounded-lg font-medium hover:bg-gray-50 transition-all duration-300 flex items-center gap-2 justify-center border border-gray-200 shadow-sm hover:shadow-md backdrop-blur-sm">
-          <FiDownload size={18} />
-          Aplicação Desktop
-        </button>
-      </div>
-      
-      <div className="relative w-full max-w-4xl mx-auto h-96 bg-white/80 rounded-xl shadow-xl overflow-hidden border border-gray-100 backdrop-blur-sm">
-        {/* App interface mockup */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-[#f9f9f9]/90">
-          {/* Mock toolbar */}
-          <div className="h-12 bg-[#002b7f] flex items-center px-4">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#c61828]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#f5ea57]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#508f61]"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-6">
+              <span className="inline-block bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm">
+                UTILIZADO POR EMPRESAS PORTUGUESAS
+              </span>
             </div>
-            <div className="ml-4 text-white text-sm font-medium">Área de Trabalho RFSArquive</div>
-          </div>
-          
-          {/* Mock content */}
-          <div className="p-6 grid grid-cols-3 gap-4 h-full">
-            {/* Left panel */}
-            <div className="bg-gray-50/70 rounded-lg p-4 border border-gray-200">
-              <div className="space-y-3">
-                <div className="h-8 bg-white rounded-md border border-gray-200"></div>
-                <div className="h-8 bg-white rounded-md border border-gray-200"></div>
-                <div className="h-8 bg-[#002b7f]/10 rounded-md border border-[#002b7f]/20"></div>
-                <div className="h-8 bg-white rounded-md border border-gray-200"></div>
-              </div>
+
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+              Processamento de Ficheiros <br className="hidden md:block" />
+              <span className="bg-white/10 px-2 rounded-lg">Profissional e Simples</span>
+            </h1>
+            
+            <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8">
+              Soluções completas para PDF, imagens e documentos na cloud ou desktop.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+              <button className="bg-white hover:bg-gray-100 text-[#002b7f] px-6 py-3 rounded-lg font-medium flex items-center gap-2 justify-center shadow-lg transition-all">
+                <FiUpload size={18} />
+                Processar Online
+              </button>
+              <button className="bg-transparent hover:bg-white/10 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 justify-center border-2 border-white/30 hover:border-white/50 transition-all">
+                <FiDownload size={18} />
+                Aplicação Desktop
+              </button>
             </div>
             
-            {/* Main content */}
-            <div className="col-span-2 bg-white/70 rounded-lg border border-gray-200 flex flex-col">
-              <div className="border-b border-gray-200 p-3 flex gap-2">
-                <div className="w-24 h-8 rounded bg-gray-100"></div>
-                <div className="w-24 h-8 rounded bg-gray-100"></div>
-                <div className="w-24 h-8 rounded bg-[#002b7f]/10"></div>
+            {/* App Preview */}
+            <div className="relative w-full max-w-3xl mx-auto h-72 bg-white/10 rounded-xl shadow-xl overflow-hidden border-2 border-white/20 backdrop-blur-sm">
+              <div className="h-10 bg-[#002b7f] flex items-center px-4 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#c61828]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#f5ea57]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#508f61]"></div>
+                </div>
+                <div className="ml-3 text-white text-sm">RFSArquive</div>
               </div>
-              <div className="flex-1 flex items-center justify-center p-6">
-                <div className="text-center">
-                  <FiEdit size={40} className="mx-auto text-[#002b7f] mb-3" />
-                  <h3 className="text-lg font-medium text-gray-800">Arraste ficheiros para começar</h3>
-                  <p className="text-sm text-gray-600 mt-1">Suporta PDF, DOCX, JPG, PNG e mais 20 formatos</p>
+              
+              <div className="p-4 grid grid-cols-4 gap-4 h-[calc(100%-2.5rem)]">
+                <div className="col-span-1 bg-white/5 rounded-lg border border-white/10 p-3">
+                  <div className="space-y-3">
+                    <div className="h-7 bg-white/10 rounded border border-white/10"></div>
+                    <div className="h-7 bg-white/10 rounded border border-white/10"></div>
+                    <div className="h-7 bg-[#508f61]/30 rounded border border-[#508f61]/40"></div>
+                  </div>
+                </div>
+                
+                <div className="col-span-3 bg-white/5 rounded-lg border border-white/10 flex flex-col">
+                  <div className="border-b border-white/10 p-2 flex gap-2">
+                    <div className="w-20 h-7 rounded bg-white/10"></div>
+                    <div className="w-20 h-7 rounded bg-white/10"></div>
+                    <div className="w-20 h-7 rounded bg-[#002b7f]/30"></div>
+                  </div>
+                  <div className="flex-1 flex items-center justify-center p-4">
+                    <div className="text-center">
+                      <FiImage size={32} className="mx-auto text-white/80 mb-3" />
+                      <p className="text-sm text-white/80">Arraste ficheiros ou clique para carregar</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  {/* Floating decorative elements */}
- {/*  <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#508f61]/10 blur-xl"></div>
-  <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-[#002b7f]/10 blur-xl"></div> */}
-</section>
+        {/* Subtle brand color circles */}
+        <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-[#002b7f]/20 blur-[80px]"></div>
+        <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-[#c61828]/20 blur-[80px]"></div>
+      </section>
 
       
       {/* Funcionalidades */}

@@ -65,7 +65,7 @@ export default function FileProApp() {
       
       {/* Seção Hero */}
       {/* Hero Section with Balanced Three-Color Gradient */}
-      <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-r from-[#002b7f] via-[#c61828] to-[#508f61] text-white">
+      <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-r from-[#002b7f] to-[#c61828] text-white">
         {/* Color overlay to blend the gradient smoothly */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/5"></div>
 
@@ -77,11 +77,16 @@ export default function FileProApp() {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-              Processamento de Ficheiros <br className="hidden md:block" />
-              <span className="bg-white/10 px-2 rounded-lg">Profissional e Simples</span>
-            </h1>
-            
+           <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
+            <span className="block text-white mb-2">Processamento de Ficheiros</span>
+            <span className="relative inline-block">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#f5ea57] to-[#508f61]">
+                Profissional e Simples
+              </span>
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-white/50 -z-0"></span>
+            </span>
+          </h1>
+                      
             <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8">
               Soluções completas para PDF, imagens e documentos na cloud ou desktop.
             </p>

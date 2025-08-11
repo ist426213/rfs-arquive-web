@@ -1,6 +1,7 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-import { FiUpload, FiDownload, FiEdit, FiSettings, FiLock, FiUsers, FiShield, FiImage } from "react-icons/fi";
+import { FiUpload, FiDownload, FiEdit, FiSettings, FiLock, FiUsers, FiShield, FiImage, FiAward, FiHardDrive, FiPlus, FiFile } from "react-icons/fi";
 import { FaFilePdf, FaFileImage, FaFileWord, FaFileExcel, FaFileAlt } from "react-icons/fa";
 import React from "react";
 
@@ -65,85 +66,153 @@ export default function FileProApp() {
       
       {/* Seção Hero */}
       {/* Hero Section with Balanced Three-Color Gradient */}
-      <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-r from-[#002b7f] to-[#c61828] text-white">
-        {/* Color overlay to blend the gradient smoothly */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/5"></div>
+     <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-r from-[#002b7f] to-[#c61828]"> {/* to-[#508f61] */}
+  {/* Animated gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent opacity-90"></div>
+  
+  {/* Floating particles */}
+  <div className="absolute inset-0 overflow-hidden">
+    {[...Array(15)].map((_, i) => (
+      <div 
+        key={i}
+        className="absolute rounded-full bg-white/10"
+        style={{
+          width: `${Math.random() * 6 + 2}px`,
+          height: `${Math.random() * 6 + 2}px`,
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          animation: `float ${Math.random() * 10 + 10}s linear infinite`,
+          animationDelay: `${Math.random() * 5}s`
+        }}
+      />
+    ))}
+  </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-6">
-              <span className="inline-block bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm">
-                UTILIZADO POR EMPRESAS PORTUGUESAS
-              </span>
-            </div>
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-5xl mx-auto text-center">
+      <div className="mb-6 animate-fade-in">
+        <span className="inline-block bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm border border-white/10 hover:bg-white/30 transition-colors duration-300">
+          <span className="inline-flex items-center gap-1.5">
+            <FiAward className="text-[#f5ea57]" />
+            UTILIZADO POR EMPRESAS PORTUGUESAS
+          </span>
+        </span>
+      </div>
 
-           <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
-            <span className="block text-white mb-2">Processamento de Ficheiros</span>
-            <span className="relative inline-block">
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#f5ea57] to-[#508f61]">
-                Profissional e Simples
-              </span>
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-white/50 -z-0"></span>
-            </span>
-          </h1>
-                      
-            <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8">
-              Soluções completas para PDF, imagens e documentos na cloud ou desktop.
-            </p>
+      <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight text-white drop-shadow-lg animate-slide-up">
+        <span className="block mb-2">Processamento de Ficheiros</span>
+        <span className="relative inline-block">
+          <span className="relative z-10 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#f5ea57]">
+            Profissional e Simples
+          </span>
+          <span className="absolute -bottom-1 left-0 w-full h-1.5 bg-[#f5ea57]/60 rounded-full"></span>
+        </span>
+      </h1>
+      
+      <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 drop-shadow-sm leading-relaxed animate-fade-in delay-100">
+        Soluções completas para PDF, imagens e documentos na cloud ou desktop. <br className="hidden md:block" />
+        Tecnologia portuguesa para simplificar o seu fluxo de trabalho.
+      </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-              <button className="bg-white hover:bg-gray-100 text-[#002b7f] px-6 py-3 rounded-lg font-medium flex items-center gap-2 justify-center shadow-lg transition-all">
-                <FiUpload size={18} />
-                Processar Online
-              </button>
-              <button className="bg-transparent hover:bg-white/10 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 justify-center border-2 border-white/30 hover:border-white/50 transition-all">
-                <FiDownload size={18} />
-                Aplicação Desktop
-              </button>
-            </div>
-            
-            {/* App Preview */}
-            <div className="relative w-full max-w-3xl mx-auto h-72 bg-white/10 rounded-xl shadow-xl overflow-hidden border-2 border-white/20 backdrop-blur-sm">
-              <div className="h-10 bg-[#002b7f] flex items-center px-4 border-b border-white/10">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#c61828]"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#f5ea57]"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#508f61]"></div>
-                </div>
-                <div className="ml-3 text-white text-sm">RFSArquive</div>
+      <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate-fade-in delay-200">
+        <button className="bg-white hover:bg-gray-100 text-[#002b7f] px-8 py-4 rounded-lg font-semibold flex items-center gap-3 justify-center shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0">
+          <FiUpload size={20} className="shrink-0" />
+          <span>Processar Online</span>
+          {/* <span className="absolute -right-2 -top-2 bg-[#c61828] text-white text-xs px-2 py-1 rounded-full shadow">GRÁTIS</span> */}
+        </button>
+        <button className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-3 justify-center border border-white/30 backdrop-blur-sm transition-all hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0">
+          <FiDownload size={20} className="shrink-0" />
+          <span>Aplicação Desktop</span>
+        </button>
+      </div>
+      
+      {/* Interactive App Preview */}
+      <div className="relative w-full max-w-4xl mx-auto h-80 bg-white/15 rounded-2xl shadow-2xl overflow-hidden border border-white/30 backdrop-blur-sm transition-all hover:shadow-3xl hover:border-white/50 animate-fade-in delay-300">
+        <div className="h-12 bg-[#002b7f] flex items-center px-4 border-b border-white/20">
+          <div className="flex items-center gap-2 mr-3">
+            <div className="w-3 h-3 rounded-full bg-[#c61828] hover:bg-[#ff3d3d] transition-colors"></div>
+            <div className="w-3 h-3 rounded-full bg-[#f5ea57] hover:bg-[#fff27d] transition-colors"></div>
+            <div className="w-3 h-3 rounded-full bg-[#508f61] hover:bg-[#6daf7e] transition-colors"></div>
+          </div>
+          <div className="text-white text-sm font-medium flex items-center gap-2">
+            <FiHardDrive className="text-[#f5ea57]" />
+            <span>RFSArquive</span>
+            <span className="text-white/60 ml-2">v3.2.1</span>
+          </div>
+        </div>
+        
+        <div className="p-5 grid grid-cols-4 gap-5 h-[calc(100%-3rem)]">
+          <div className="col-span-1 bg-white/10 rounded-xl border border-white/20 p-4 transition-all hover:bg-white/15">
+            <div className="space-y-3">
+              <div className="h-8 bg-white/20 rounded-lg border border-white/20 hover:bg-white/30 transition-colors"></div>
+              <div className="h-8 bg-white/20 rounded-lg border border-white/20 hover:bg-white/30 transition-colors"></div>
+              <div className="h-8 bg-[#508f61]/40 rounded-lg border border-[#508f61]/50 hover:bg-[#508f61]/50 transition-colors flex items-center px-3 text-white text-sm font-medium">
+                <FiFile className="mr-2" /> Processar
               </div>
-              
-              <div className="p-4 grid grid-cols-4 gap-4 h-[calc(100%-2.5rem)]">
-                <div className="col-span-1 bg-white/5 rounded-lg border border-white/10 p-3">
-                  <div className="space-y-3">
-                    <div className="h-7 bg-white/10 rounded border border-white/10"></div>
-                    <div className="h-7 bg-white/10 rounded border border-white/10"></div>
-                    <div className="h-7 bg-[#508f61]/30 rounded border border-[#508f61]/40"></div>
-                  </div>
+            </div>
+          </div>
+          
+          <div className="col-span-3 bg-white/10 rounded-xl border border-white/20 flex flex-col transition-all hover:bg-white/15">
+            <div className="border-b border-white/20 p-3 flex gap-3">
+              <div className="w-24 h-9 rounded-lg bg-white/20 hover:bg-white/30 transition-colors"></div>
+              <div className="w-24 h-9 rounded-lg bg-white/20 hover:bg-white/30 transition-colors"></div>
+              <div className="w-24 h-9 rounded-lg bg-[#002b7f]/40 hover:bg-[#002b7f]/50 transition-colors flex items-center justify-center text-white text-sm font-medium">
+                <FiPlus className="mr-1.5" /> Novo
+              </div>
+            </div>
+            <div className="flex-1 flex items-center justify-center p-6 group">
+              <div className="text-center transform group-hover:scale-105 transition-transform">
+                <div className="relative inline-block mb-4">
+                  <FiImage size={40} className="mx-auto text-white/90 drop-shadow-sm" />
+                  <FiUpload size={20} className="absolute -bottom-1 -right-1 bg-[#c61828] text-white p-1 rounded-full border-2 border-white/90" />
                 </div>
-                
-                <div className="col-span-3 bg-white/5 rounded-lg border border-white/10 flex flex-col">
-                  <div className="border-b border-white/10 p-2 flex gap-2">
-                    <div className="w-20 h-7 rounded bg-white/10"></div>
-                    <div className="w-20 h-7 rounded bg-white/10"></div>
-                    <div className="w-20 h-7 rounded bg-[#002b7f]/30"></div>
-                  </div>
-                  <div className="flex-1 flex items-center justify-center p-4">
-                    <div className="text-center">
-                      <FiImage size={32} className="mx-auto text-white/80 mb-3" />
-                      <p className="text-sm text-white/80">Arraste ficheiros ou clique para carregar</p>
-                    </div>
-                  </div>
-                </div>
+                <p className="text-md text-white/90 drop-shadow-sm font-medium">Arraste ficheiros ou clique para carregar</p>
+                <p className="text-sm text-white/70 mt-1">Suporta PDF, JPG, PNG, DOCX</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        {/* Subtle brand color circles */}
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-[#002b7f]/20 blur-[80px]"></div>
-        <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-[#c61828]/20 blur-[80px]"></div>
-      </section>
+  {/* Dynamic gradient accents */}
+  <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#002b7f]/20 blur-[90px] opacity-80 animate-pulse-slow"></div>
+  <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#c61828]/20 blur-[90px] opacity-80 animate-pulse-slow delay-1000"></div>
+  <div className="absolute top-1/2 left-1/4 w-60 h-60 rounded-full bg-[#508f61]/15 blur-[70px] opacity-60"></div>
+
+  <style jsx>{`
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(10px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.5; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 8s ease-in-out infinite;
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    .animate-slide-up {
+      animation: slideUp 0.8s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+  `}</style>
+</section>
 
       
       {/* Funcionalidades */}
